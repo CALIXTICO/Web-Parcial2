@@ -6,7 +6,7 @@ export declare class ProfesorEntity {
     nombre: string;
     depto: string;
     ext: number;
-    esParEvaluado: string;
+    esParEvaluador: string;
     mentorias: ProyectoEntity[];
     evaluaciones: EvaluacionEntity[];
 }

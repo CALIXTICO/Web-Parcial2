@@ -9,12 +9,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.EvaluacionModule = void 0;
 const common_1 = require("@nestjs/common");
 const evaluacion_service_1 = require("./evaluacion.service");
+const typeorm_1 = require("@nestjs/typeorm");
+const evaluacion_entity_1 = require("./evaluacion.entity/evaluacion.entity");
+const evaluacion_controller_1 = require("./evaluacion.controller");
 let EvaluacionModule = class EvaluacionModule {
 };
 exports.EvaluacionModule = EvaluacionModule;
 exports.EvaluacionModule = EvaluacionModule = __decorate([
     (0, common_1.Module)({
-        providers: [evaluacion_service_1.EvaluacionService]
+        providers: [evaluacion_service_1.EvaluacionService],
+        imports: [typeorm_1.TypeOrmModule.forFeature([evaluacion_entity_1.EvaluacionEntity])],
+        controllers: [evaluacion_controller_1.EvaluacionController]
     })
 ], EvaluacionModule);
 //# sourceMappingURL=evaluacion.module.js.map

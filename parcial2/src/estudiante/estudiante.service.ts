@@ -1,4 +1,4 @@
-import { BadRequestException, ConflictException, Injectable } from '@nestjs/common';
+import { BadRequestException, ConflictException, Injectable, NotFoundException } from '@nestjs/common';
 import { EstudianteEntity } from './estudiante.entity/estudiante.entity';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -24,10 +24,11 @@ export class EstudianteService {
    {
         const estudiante = await this.estudianteRepository.findOne({where: {id}, relations: ["proyectos"] } );
         
-        if (estudiante){
-            if (estudiante.proyectos.length > 0)
-            throw new ConflictException("No está permitido borrar a este usuario");
-        }
+        if (!estudiante)
+        throw new NotFoundException("El estudiante con ese id no fue encontrado");
+
+        if (estudiante.proyectos.length > 0)
+        throw new ConflictException("No está permitido borrar a este usuario");
 
        await this.estudianteRepository.remove(estudiante);
    }

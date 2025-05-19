@@ -8,7 +8,7 @@ export class ProfesorEntity {
     @PrimaryGeneratedColumn({ type: 'bigint' })
     id: string;
 
-    @Column(Unique)
+    @Column({unique: true})
     cedula: number;
 
     @Column()
@@ -21,7 +21,7 @@ export class ProfesorEntity {
     ext: number;
 
     @Column({ type: 'boolean' })
-    esParEvaluado: string
+    esParEvaluador: string
 
     @OneToMany(() => ProyectoEntity, proyecto => proyecto.mentor)
     mentorias: ProyectoEntity[]

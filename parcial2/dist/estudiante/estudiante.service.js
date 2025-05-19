@@ -30,10 +30,10 @@ let EstudianteService = class EstudianteService {
     }
     async eliminarEstudiante(id) {
         const estudiante = await this.estudianteRepository.findOne({ where: { id }, relations: ["proyectos"] });
-        if (estudiante) {
-            if (estudiante.proyectos.length > 0)
-                throw new common_1.ConflictException("No está permitido borrar a este usuario");
-        }
+        if (!estudiante)
+            throw new common_1.NotFoundException("El estudiante con ese id no fue encontrado");
+        if (estudiante.proyectos.length > 0)
+            throw new common_1.ConflictException("No está permitido borrar a este usuario");
         await this.estudianteRepository.remove(estudiante);
     }
 };

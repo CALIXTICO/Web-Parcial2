@@ -9,12 +9,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProyectoModule = void 0;
 const common_1 = require("@nestjs/common");
 const proyecto_service_1 = require("./proyecto.service");
+const proyecto_entity_1 = require("./proyecto.entity/proyecto.entity");
+const typeorm_1 = require("@nestjs/typeorm");
+const proyecto_controller_1 = require("./proyecto.controller");
 let ProyectoModule = class ProyectoModule {
 };
 exports.ProyectoModule = ProyectoModule;
 exports.ProyectoModule = ProyectoModule = __decorate([
     (0, common_1.Module)({
-        providers: [proyecto_service_1.ProyectoService]
+        providers: [proyecto_service_1.ProyectoService],
+        imports: [typeorm_1.TypeOrmModule.forFeature([proyecto_entity_1.ProyectoEntity])],
+        controllers: [proyecto_controller_1.ProyectoController]
     })
 ], ProyectoModule);
 //# sourceMappingURL=proyecto.module.js.map

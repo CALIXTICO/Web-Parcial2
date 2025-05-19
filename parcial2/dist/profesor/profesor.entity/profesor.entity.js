@@ -19,7 +19,7 @@ let ProfesorEntity = class ProfesorEntity {
     nombre;
     depto;
     ext;
-    esParEvaluado;
+    esParEvaluador;
     mentorias;
     evaluaciones;
 };
@@ -29,7 +29,7 @@ __decorate([
     __metadata("design:type", String)
 ], ProfesorEntity.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)(typeorm_1.Unique),
+    (0, typeorm_1.Column)({ unique: true }),
     __metadata("design:type", Number)
 ], ProfesorEntity.prototype, "cedula", void 0);
 __decorate([
@@ -47,7 +47,7 @@ __decorate([
 __decorate([
     (0, typeorm_1.Column)({ type: 'boolean' }),
     __metadata("design:type", String)
-], ProfesorEntity.prototype, "esParEvaluado", void 0);
+], ProfesorEntity.prototype, "esParEvaluador", void 0);
 __decorate([
     (0, typeorm_1.OneToMany)(() => proyecto_entity_1.ProyectoEntity, proyecto => proyecto.mentor),
     __metadata("design:type", Array)
