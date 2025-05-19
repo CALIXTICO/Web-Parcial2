@@ -5,4 +5,5 @@ export declare class ProyectoDto {
     readonly estado: number;
     readonly fechaInicio: string;
     readonly fechaFin: string;
+    readonly presupuesto: number;
 }

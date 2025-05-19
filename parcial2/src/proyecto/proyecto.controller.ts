@@ -19,7 +19,7 @@ export class ProyectoController {
     }
 
     @Put(':id')
-    async asignarEvaluador(@Param('id') id: string): Promise<ProyectoEntity> {
+    async avanzarProyecto(@Param('id') id: string): Promise<ProyectoEntity> {
     return this.proyectoService.avanzarProyecto(id);
     }
 
@@ -27,5 +27,5 @@ export class ProyectoController {
     async findAllEstudiantes(@Param('id') id: string): Promise<EstudianteEntity> {
     return this.proyectoService.findAllEstudiantes(id);
     }
-
+ 
 }

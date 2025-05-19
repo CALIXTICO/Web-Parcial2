@@ -18,6 +18,7 @@ class ProyectoDto {
     estado;
     fechaInicio;
     fechaFin;
+    presupuesto;
 }
 exports.ProyectoDto = ProyectoDto;
 __decorate([
@@ -50,4 +51,9 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
 ], ProyectoDto.prototype, "fechaFin", void 0);
+__decorate([
+    (0, class_validator_1.IsNumber)(),
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", Number)
+], ProyectoDto.prototype, "presupuesto", void 0);
 //# sourceMappingURL=proyecto.dto.js.map

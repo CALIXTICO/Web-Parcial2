@@ -15,6 +15,7 @@ class ProfesorDto {
     cedula;
     nombre;
     depto;
+    ext;
     esParEvaluador;
 }
 exports.ProfesorDto = ProfesorDto;
@@ -33,6 +34,11 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
 ], ProfesorDto.prototype, "depto", void 0);
+__decorate([
+    (0, class_validator_1.IsNumber)(),
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", Number)
+], ProfesorDto.prototype, "ext", void 0);
 __decorate([
     (0, class_validator_1.IsBoolean)(),
     (0, class_validator_1.IsNotEmpty)(),

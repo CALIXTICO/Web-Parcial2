@@ -28,7 +28,7 @@ let ProyectoController = class ProyectoController {
         const proyecto = (0, class_transformer_1.plainToInstance)(proyecto_entity_1.ProyectoEntity, proyectoDto);
         return await this.proyectoService.crearProyecto(proyecto);
     }
-    async asignarEvaluador(id) {
+    async avanzarProyecto(id) {
         return this.proyectoService.avanzarProyecto(id);
     }
     async findAllEstudiantes(id) {
@@ -49,7 +49,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
-], ProyectoController.prototype, "asignarEvaluador", null);
+], ProyectoController.prototype, "avanzarProyecto", null);
 __decorate([
     (0, common_1.Get)(':id/estudiantes'),
     __param(0, (0, common_1.Param)('id')),

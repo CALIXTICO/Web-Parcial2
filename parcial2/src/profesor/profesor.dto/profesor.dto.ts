@@ -13,6 +13,10 @@ export class ProfesorDto {
  @IsString()
  @IsNotEmpty()
  readonly depto: string;
+
+ @IsNumber()
+ @IsNotEmpty()
+ readonly ext: number;
  
  @IsBoolean()
  @IsNotEmpty()

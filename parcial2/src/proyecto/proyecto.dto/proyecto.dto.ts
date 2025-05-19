@@ -25,4 +25,8 @@ export class ProyectoDto {
  @IsString()
  @IsNotEmpty()
  readonly fechaFin: string;
+
+ @IsNumber()
+ @IsNotEmpty()
+ readonly presupuesto: number;
 }

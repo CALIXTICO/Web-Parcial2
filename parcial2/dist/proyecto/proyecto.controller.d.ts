@@ -6,6 +6,6 @@ export declare class ProyectoController {
     private readonly proyectoService;
     constructor(proyectoService: ProyectoService);
     crearProyecto(proyectoDto: ProyectoDto): Promise<ProyectoEntity>;
-    asignarEvaluador(id: string): Promise<ProyectoEntity>;
+    avanzarProyecto(id: string): Promise<ProyectoEntity>;
     findAllEstudiantes(id: string): Promise<EstudianteEntity>;
 }
